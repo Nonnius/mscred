@@ -49,19 +49,19 @@ const Navbar = () => {
                 className='text-white hover:text-cyan-600 text-3xl ml-[20rem] cursor-pointer'
                 />
                 {/**Mobile menu items*/}
-                <nav className='mt-10 text-white space-y-4 text-center'>
+                <nav className='mt-10 text-cyan-500 text-md space-y-4 text-center'>
                     <a href="https://reid-dev-portfolio.vercel.app" 
                         onClick={() => setShowMobileMenu(false)}
-                        className="block cursor-pointer text-white font-semibold">Home</a>
-                        <a href="https://reid-ms-training.vercel.app" 
+                        className="block cursor-pointer text-cyan-500 font-semibold">Home</a>
+                        <a href="https://reid-education.vercel.app" 
                         onClick={() => setShowMobileMenu(false)}
-                        className="block cursor-pointer text-white font-semibold">MS Training</a>
+                        className="block cursor-pointer text-cyan-500 font-semibold">Education</a>
                         <a href="https://project-gallery.vercel.app" 
                         onClick={() => setShowMobileMenu(false)}
-                        className="block cursor-pointer text-white font-semibold">Projects Gallery</a>                
+                        className="block cursor-pointer text-cyan-500 font-semibold">Projects Gallery</a>                
                         <a href="https://reid-dev-portfolio.vercel.app/#contact" 
                         onClick={() => setShowMobileMenu(false)}
-                        className="block cursor-pointer text-white font-semibold">Contact</a>
+                        className="block cursor-pointer text-cyan-500 font-semibold">Contact</a>
                 </nav>
             </div>
         )}
