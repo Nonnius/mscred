@@ -6,6 +6,8 @@ import {Navigation, Pagination} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import {imageSlides} from '../data/Data';
+import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
+
 
 
 
@@ -32,7 +34,17 @@ const MSCredBody = () => {
               el: '.swiper-pagination', 
               clickable: true,
             }}
-            navigation={true}
+            navigation={{
+              prevEl: '.custom-prev',
+              nextEl: '.custom-next',
+            }}
+             onSwiper={(swiper) => {
+               setTimeout(() => {
+                  swiper.navigation.init();
+                  swiper.navigation.update();
+             });
+            }}
+
             breakpoints={{
                 320: {slidesPerView: 1},
                 768: {slidesPerView: 1},
@@ -59,9 +71,14 @@ const MSCredBody = () => {
                   className="credImg mx-auto rounded-lg shadow-xl object-contain max-h-[80vh] w-auto"
                 />
               </SwiperSlide>
-            ))}
-
-          </Swiper>
+              
+            ))}            
+          </Swiper><div className="custom-prev">
+            <AiOutlineLeft size={32} />
+          </div>
+          <div className="custom-next">
+            <AiOutlineRight size={32} />
+          </div>
         </div>
       </div>
     </>
