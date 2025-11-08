@@ -1,131 +1,95 @@
-.imgBg{
-    /* use safe-area insets for phones with display cutouts and avoid forcing 100vh via Tailwind class
-       allow the background to grow but not clip content. */
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-    min-height: 100vh;
-    height: auto !important;
+/* Custom properties for consistent theming */
+:root {
+  --swiper-theme-color: #fff;
+  --swiper-navigation-size: clamp(24px, 5vw, 44px);
 }
 
-/* Constrain the credential card so it never exceeds the viewport height on tall phones
-   and enable internal scrolling if the content is taller than the available space. */
-.credBg{
-    max-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 3rem);
-    overflow-y: auto;
-    margin-top: 0 !important;
+/* Base styles */
+.imgBg {
+  background-position: center;
+  background-size: cover;
+  isolation: isolate;
 }
 
-@media (min-width: 380px){
-    .credBg{    
-       width: 24rem;  
-        /* prefer flexible max-height (handled by .credBg above) */
-        margin-top: 0;
-    }
-    .msCredSwiper{
-       width: 34rem!important;
-    }
-    .imgTitle{
-        font-size: 28px;
-        margin-bottom: 1rem;
-    }
+/* Fluid typography using clamp */
+.imgTitle {
+  font-size: clamp(1.25rem, 1rem + 2vw, 2.5rem);
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  max-width: 90ch;
+  margin-inline: auto;
 }
 
-
-@media (min-width: 712px){
-    .credBg{
-        width: 38rem;
-        margin-top: 0;
-    }
-    .msCredSwiper{
-        width: 36rem!important;
-    }
-    .imgTitle{
-        font-size: 28px;
-        margin-bottom: 2rem;
-    }
+/* Modern card styling */
+.credBg {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 145, 178, 0.1),
+    rgba(8, 145, 178, 0.2)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
 }
 
-@media (min-width: 768px){
-    .credBg{
-        width: 40rem;
-        margin-top: 0;
-    }
-    .msCredSwiper{
-        width: 36rem!important;
-    }
-    .imgTitle{
-        font-size: 28px;
-    }
+/* Enhanced image display */
+.credImg {
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
-@media (min-width: 824px){
-    .credBg{
-        max-width: 20rem;
-        padding-top: 1rem;
-        margin-top: 0;
-    }
-    .msCredSwiper{
-        width: 15rem!important;
-    }
-    .imgTitle{
-        margin-bottom: 0;
-    } 
-    .credImg{
-        height: 20rem;
-    } 
-    
+/* Custom Swiper styles */
+.msCredSwiper {
+  --swiper-navigation-color: #fff;
+  --swiper-pagination-color: #fff;
+  padding: max(1rem, 2vw);
 }
 
-@media (min-width: 1024px){
-    .credBg{
-        width: 44rem;
-        margin-top: 0;
-    }
-    .msCredSwiper{
-        width: 33rem!important;
-    }
-    .imgTitle{
-        margin-bottom: 1rem;
-    }
-    .credImg{
-        height: 35rem;
-    }
-  
+.swiper-button-next,
+.swiper-button-prev {
+  background: rgba(0, 0, 0, 0.3);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
 }
 
-@media (min-width: 1138px){
-    .credBg{
-        width: 44rem;
-        margin-top: 0;
-    }
-    .msCredSwiper{
-        width: 30rem!important;
-    }
-    .imgTitle{
-        margin-bottom: 1rem;
-    }
-    .credImg{
-        height: 30rem;
-    }
-  
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(0, 0, 0, 0.5);
 }
 
-@media (min-width: 1440px){
-    .credBg{
-        padding-top: 4rem;
-        width: 55rem!important;
-        margin-top: 0;
-    }
-    .msCredSwiper{
-        width: 55rem!important;
-        /* let the container handle scrolling */
-    }
-    .imgTitle{
-        margin-bottom: 1rem;
-        font-size: 24px!important;
-    }
-    .credImg{
-        height: 40rem;
-        
-    }
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .credBg {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .credBg {
+    margin: 2rem auto;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .credBg {
+    background: linear-gradient(
+      to bottom,
+      rgba(8, 145, 178, 0.15),
+      rgba(8, 145, 178, 0.25)
+    );
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .credImg,
+  .swiper-button-next,
+  .swiper-button-prev {
+    transition: none;
+  }
 }
