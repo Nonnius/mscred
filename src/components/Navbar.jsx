@@ -52,16 +52,16 @@ const Navbar = () => {
                 <nav className='mt-10 text-cyan-500 text-[24px] space-y-4 text-center'>
                     <a href="https://reid-dev-portfolio.vercel.app" 
                         onClick={() => setShowMobileMenu(false)}
-                        className="block cursor-pointer text-cyan-500 font-semibold">Home</a>
+                        className="block text-[24px] cursor-pointer text-cyan-500 font-semibold">Home</a>
                         <a href="https://reid-education.vercel.app" 
                         onClick={() => setShowMobileMenu(false)}
-                        className="block cursor-pointer text-cyan-500 font-semibold">Education</a>
+                        className="block text-[24px] cursor-pointer text-cyan-500 font-semibold">Education</a>
                         <a href="https://project-gallery.vercel.app" 
                         onClick={() => setShowMobileMenu(false)}
-                        className="block cursor-pointer text-cyan-500 font-semibold">Projects Gallery</a>                
+                        className="block text-[24px] cursor-pointer text-cyan-500 font-semibold">Projects Gallery</a>                
                         <a href="https://reid-dev-portfolio.vercel.app/#contact" 
                         onClick={() => setShowMobileMenu(false)}
-                        className="block cursor-pointer text-cyan-500 font-semibold">Contact</a>
+                        className="block text-[24px] cursor-pointer text-cyan-500 font-semibold">Contact</a>
                 </nav>
             </div>
         )}
