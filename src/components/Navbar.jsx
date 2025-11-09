@@ -49,7 +49,7 @@ const Navbar = () => {
                 className='text-white hover:text-cyan-600 text-3xl ml-[20rem] cursor-pointer'
                 />
                 {/**Mobile menu items*/}
-                <nav className='mt-10 text-cyan-500 text-md space-y-4 text-center'>
+                <nav className='mt-10 text-cyan-500 text-[24px] space-y-4 text-center'>
                     <a href="https://reid-dev-portfolio.vercel.app" 
                         onClick={() => setShowMobileMenu(false)}
                         className="block cursor-pointer text-cyan-500 font-semibold">Home</a>
